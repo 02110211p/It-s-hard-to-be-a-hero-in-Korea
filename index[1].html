@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>합주 실패 기록 취향표</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1 id="title"></h1>
+      <p class="subtitle">취향표 / 공수표</p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-view="preference">취향표</button>
+      <button class="tab" data-view="pairing">공수표</button>
+    </nav>
+
+    <section id="preference-view" class="view active">
+      <div class="legend" id="preference-legend"></div>
+      <div class="toolbar">
+        <button id="reset-preference">취향표 초기화</button>
+        <button id="save-preference">PNG로 저장</button>
+      </div>
+      <div id="preference-board" class="board-wrap"></div>
+    </section>
+
+    <section id="pairing-view" class="view">
+      <p class="help">행 = 공 / 열 = 수. 칸을 클릭해서 원하는 공수 취향을 순서대로 선택하세요.</p>
+      <div class="legend" id="pairing-legend"></div>
+      <div class="toolbar">
+        <button id="reset-pairing">공수표 초기화</button>
+        <button id="save-pairing">PNG로 저장</button>
+      </div>
+      <div id="pairing-board" class="board-wrap"></div>
+    </section>
+
+    <footer>
+      <span id="footer-text"></span>
+    </footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
