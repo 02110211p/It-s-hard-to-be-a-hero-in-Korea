@@ -28,6 +28,6 @@ document.querySelectorAll('.tab').forEach(btn=>btn.onclick=()=>{document.querySe
 $('#reset-preference').onclick=()=>{if(confirm('취향표를 전부 초기화할까요?')){Object.keys(preferenceState).forEach(k=>delete preferenceState[k]);renderPreference()}};
 $('#reset-pairing').onclick=()=>{if(confirm('공수표를 전부 초기화할까요?')){Object.keys(pairingState).forEach(k=>delete pairingState[k]);renderPairing()}};
 async function saveBoard(boardId,filename){if(!window.html2canvas){const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';document.head.appendChild(s);await new Promise((r,j)=>{s.onload=r;s.onerror=j})}const canvas=await html2canvas($(boardId),{backgroundColor:'#fff',scale:2});const a=document.createElement('a');a.download=filename;a.href=canvas.toDataURL('image/png');a.click()}
-$('#save-preference').onclick=()=>saveBoard('#preference-board','합주-실패-기록-취향표.png');
-$('#save-pairing').onclick=()=>saveBoard('#pairing-board','합주-실패-기록-공수표.png');
+$('#save-preference').onclick=()=>saveBoard('#preference-board','한히힘-취향표.png');
+$('#save-pairing').onclick=()=>saveBoard('#pairing-board','한히힘-공수표.png');
 renderPreference();renderPairing();
